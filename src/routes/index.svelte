@@ -1,1 +1,25 @@
-<h1 class="text-3xl font-bold underline">Hello world!</h1>
+<main>
+	<!-- default theme -->
+	<div class="bg-base-100 p-10 text-base-content">
+		<button class="btn">button</button>
+		<button class="btn btn-primary">button</button>
+		<button class="btn btn-secondary">button</button>
+		<button class="btn btn-accent">button</button>
+	</div>
+
+	<!-- garden theme -->
+	<div class="bg-base-100 p-10 text-base-content" data-theme="garden">
+		<button class="btn">button</button>
+		<button class="btn btn-primary">button</button>
+		<button class="btn btn-secondary">button</button>
+		<button class="btn btn-accent">button</button>
+	</div>
+
+	<!-- forest theme -->
+	<div class="bg-base-100 p-10 text-base-content" data-theme="forest">
+		<button class="btn">button</button>
+		<button class="btn btn-primary">button</button>
+		<button class="btn btn-secondary">button</button>
+		<button class="btn btn-accent">button</button>
+	</div>
+</main>
