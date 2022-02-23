@@ -1,0 +1,1 @@
+Template created by following instructions at https://tailwindcss.com/docs/guides/sveltekit
