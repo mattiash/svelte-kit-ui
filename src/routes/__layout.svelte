@@ -51,6 +51,7 @@
 		<ul class="menu p-4 overflow-y-auto w-80 bg-base-200 text-base-content">
 			<!-- Sidebar content here -->
 			<li><a href="/">Home</a></li>
+			<li><a href="/user">Users</a></li>
 			<li><a href="/channel">Channels</a></li>
 		</ul>
 	</div>
