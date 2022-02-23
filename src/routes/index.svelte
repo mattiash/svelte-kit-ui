@@ -1,25 +1,12 @@
-<main>
-	<!-- default theme -->
-	<div class="bg-base-100 p-10 text-base-content">
-		<button class="btn">button</button>
-		<button class="btn btn-primary">button</button>
-		<button class="btn btn-secondary">button</button>
-		<button class="btn btn-accent">button</button>
+<div class="hero min-h-screen bg-base-200">
+	<div class="text-center hero-content">
+		<div class="max-w-md">
+			<h1 class="text-5xl font-bold">Hello there</h1>
+			<p class="py-6">
+				Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
+				quasi. In deleniti eaque aut repudiandae et a id nisi.
+			</p>
+			<button class="btn btn-primary">Get Started</button>
+		</div>
 	</div>
-
-	<!-- garden theme -->
-	<div class="bg-base-100 p-10 text-base-content" data-theme="garden">
-		<button class="btn">button</button>
-		<button class="btn btn-primary">button</button>
-		<button class="btn btn-secondary">button</button>
-		<button class="btn btn-accent">button</button>
-	</div>
-
-	<!-- forest theme -->
-	<div class="bg-base-100 p-10 text-base-content" data-theme="forest">
-		<button class="btn">button</button>
-		<button class="btn btn-primary">button</button>
-		<button class="btn btn-secondary">button</button>
-		<button class="btn btn-accent">button</button>
-	</div>
-</main>
+</div>
