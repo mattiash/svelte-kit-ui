@@ -1,5 +1,6 @@
 <script>
 	import '../app.css';
+	import Status from '$lib/status.svelte';
 </script>
 
 <div class="navbar bg-base-100">
@@ -23,6 +24,7 @@
 		<a class="btn btn-ghost normal-case text-xl">daisyUI</a>
 	</div>
 	<div class="flex-none">
+		<Status />
 		<button class="btn btn-square btn-ghost">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
