@@ -3,7 +3,7 @@
 	import Status from '$lib/status.svelte';
 </script>
 
-<div class="navbar bg-base-100">
+<div class="navbar bg-base-200">
 	<div class="flex-none">
 		<label for="my-drawer-2" class="btn drawer-button lg:hidden">
 			<svg
@@ -44,7 +44,7 @@
 
 <div class="h-screen drawer drawer-mobile w-full">
 	<input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-	<div class="drawer-content">
+	<div class="drawer-content p-1 min-h-screen">
 		<!-- Page content here -->
 		<slot />
 	</div>
