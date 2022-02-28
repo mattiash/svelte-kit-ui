@@ -1,11 +1,13 @@
-<script>
+<script lang="ts">
 	import { goto } from '$app/navigation';
-	let users = [];
+	import type { User } from './_types';
+	let users = new Array<User>();
 	fetch('https://jsonplaceholder.typicode.com/users')
 		.then((response) => response.json())
 		.then((json) => (users = json));
 </script>
 
+<h1>Users</h1>
 <div class="overflow-x-auto">
 	<table class="table w-full">
 		<!-- head -->
@@ -20,7 +22,7 @@
 		<tbody>
 			{#each users as user}
 				<tr class="cursor-pointer" on:click={() => goto('/user/' + user.id)}>
-					<th>{user.id}</th>
+					<td>{user.id}</td>
 					<td>{user.name}</td>
 					<td>Quality Control Specialist</td>
 					<td>Blue</td>
