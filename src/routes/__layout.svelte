@@ -20,8 +20,8 @@
 			>
 		</label>
 	</div>
-	<div class="flex-1">
-		<a class="btn btn-ghost normal-case text-xl">daisyUI</a>
+	<div class="flex-1 p-1">
+		<span class="font-bold text-xl">daisyUI</span>
 	</div>
 	<div class="flex-none">
 		<Status />
@@ -44,13 +44,13 @@
 
 <div class="h-screen drawer drawer-mobile w-full">
 	<input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-	<div class="drawer-content p-1 min-h-screen">
+	<div class="drawer-content p-2 min-h-screen">
 		<!-- Page content here -->
 		<slot />
 	</div>
 	<div class="drawer-side">
 		<label for="my-drawer-2" class="drawer-overlay" />
-		<ul class="menu p-4 overflow-y-auto w-80 bg-base-200 text-base-content">
+		<ul class="menu overflow-y-auto w-80 bg-base-200 text-base-content">
 			<!-- Sidebar content here -->
 			<li><a href="/">Home</a></li>
 			<li><a href="/user">Users</a></li>
