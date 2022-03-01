@@ -1,6 +1,7 @@
 <script>
 	import '../app.css';
 	import Status from '$lib/status.svelte';
+	import MainMenu from '$lib/MainMenu.svelte';
 </script>
 
 <div class="navbar bg-base-200">
@@ -50,11 +51,7 @@
 	</div>
 	<div class="drawer-side">
 		<label for="my-drawer-2" class="drawer-overlay" />
-		<ul class="menu overflow-y-auto w-80 bg-base-200 text-base-content">
-			<!-- Sidebar content here -->
-			<li><a href="/">Home</a></li>
-			<li><a href="/user">Users</a></li>
-			<li><a href="/channel">Channels</a></li>
-		</ul>
+		<!-- Sidebar content here -->
+		<MainMenu />
 	</div>
 </div>
