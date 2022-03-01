@@ -2,6 +2,14 @@
 	import '../app.css';
 	import Status from '$lib/status.svelte';
 	import MainMenu from '$lib/MainMenu.svelte';
+	import { mainMenuOpen } from '$lib/stores';
+
+	let menuOpen = false;
+
+	$: mainMenuOpen.set(menuOpen);
+	mainMenuOpen.subscribe((v) => {
+		menuOpen = v;
+	});
 </script>
 
 <div class="navbar bg-base-200">
@@ -44,7 +52,7 @@
 </div>
 
 <div class="h-screen drawer drawer-mobile w-full">
-	<input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+	<input id="my-drawer-2" type="checkbox" class="drawer-toggle" bind:checked={menuOpen} />
 	<div class="drawer-content p-2 min-h-screen">
 		<!-- Page content here -->
 		<slot />
