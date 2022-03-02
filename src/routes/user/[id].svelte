@@ -1,21 +1,26 @@
 <script context="module" lang="ts">
+	import { getUser } from '$lib/api/user';
+
 	import type { Load } from '@sveltejs/kit';
 	export const load: Load = async ({ params, fetch, session, stuff }) => {
-		const url = 'https://jsonplaceholder.typicode.com/users/' + params.id;
-		const response = await fetch(url);
-
-		return {
-			status: response.status,
-			props: {
-				item: response.ok && (await response.json())
-			}
-		};
+		try {
+			return {
+				status: 200,
+				props: {
+					item: await getUser(params.id)
+				}
+			};
+		} catch (err) {
+			return {
+				status: 404
+			};
+		}
 	};
 </script>
 
 <script lang="ts">
+	import type { User } from '$lib/api/user';
 	import { onMount } from 'svelte';
-	import type { User } from './_types';
 	export let item: User;
 
 	let timestamp = '';

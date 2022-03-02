@@ -1,10 +1,8 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import type { User } from './_types';
+	import { getUsers, type User } from '$lib/api/user';
 	let users = new Array<User>();
-	fetch('https://jsonplaceholder.typicode.com/users')
-		.then((response) => response.json())
-		.then((json) => (users = json));
+	getUsers().then((v) => (users = v));
 </script>
 
 <h1>Users</h1>
