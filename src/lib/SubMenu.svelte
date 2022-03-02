@@ -1,10 +1,26 @@
 <script lang="ts">
 	import { slide } from 'svelte/transition';
+	import { setContext } from 'svelte';
+	import { afterNavigate, beforeNavigate } from '$app/navigation';
+
 	export let title = '';
 	export let show = false;
+	let shallShow = false;
+	setContext('open', () => {
+		show = true;
+		shallShow = true;
+	});
+	beforeNavigate(() => {
+		shallShow = false;
+	});
+	afterNavigate(() =>
+		setTimeout(() => {
+			show = shallShow;
+		}, 200)
+	);
 </script>
 
-<div class="p-3 menu overflow-y-auto w-80 text-base-content bg-base-100">
+<div class="pt-3 menu overflow-clip w-80 text-base-content bg-base-100">
 	<div on:click={() => (show = !show)}>
 		{title}
 		<span class="float-right">
@@ -22,7 +38,11 @@
 	</div>
 
 	{#if show}
-		<ul transition:slide={{ duration: 200 }}>
+		<ul class="overflow-clip" transition:slide={{ duration: 200 }}>
+			<slot />
+		</ul>
+	{:else}
+		<ul class="hidden">
 			<slot />
 		</ul>
 	{/if}
