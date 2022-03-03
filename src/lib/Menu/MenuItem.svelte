@@ -1,27 +1,32 @@
-<script>
+<script lang="ts">
 	import { mainMenuOpen } from '$lib/stores';
 	import { page } from '$app/stores';
 	import { afterNavigate } from '$app/navigation';
 	import { getContext } from 'svelte';
 	export let title;
 	export let path;
+	let active = false;
 
 	function closeMenu() {
 		mainMenuOpen.set(false);
 	}
 
-	const openParent = getContext('open');
-	let active = false;
+	const openParent = getContext('open') as () => void;
+
+	// Does pathname start with the path for this menuitem?
+	function matchesPath(pathname: string) {
+		return path === '/' ? pathname === path : pathname.startsWith(path);
+	}
 
 	afterNavigate((d) => {
-		const shouldBeActive = path === '/' ? d.to.pathname === path : d.to.pathname.startsWith(path);
-		if (shouldBeActive && openParent) {
+		active = matchesPath(d.to.pathname);
+		if (active && openParent) {
 			openParent();
 		}
 	});
 
 	page.subscribe((p) => {
-		active = path === '/' ? p.url.pathname === path : p.url.pathname.startsWith(path);
+		active = matchesPath(p.url.pathname);
 	});
 </script>
 

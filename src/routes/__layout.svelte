@@ -1,7 +1,7 @@
 <script>
 	import '../app.css';
 	import Status from '$lib/status.svelte';
-	import MainMenu from '$lib/MainMenu.svelte';
+	import MainMenu from '$lib/Menu/MainMenu.svelte';
 	import { mainMenuOpen } from '$lib/stores';
 
 	let menuOpen = false;
