@@ -5,7 +5,7 @@
 </script>
 
 <svelte:window bind:innerHeight />
-<div style="min-height: {innerHeight - 52}px;" class="border-r border-b-200 pt-2 pl-3">
+<div style="min-height: {innerHeight - 52}px;" class="border-r border-b-200 pt-2 px-3">
 	<SubMenu title="Admin">
 		<MenuItem title="Users" path="/user" />
 	</SubMenu>

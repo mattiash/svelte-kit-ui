@@ -20,7 +20,7 @@
 	);
 </script>
 
-<div class="pt-3 menu overflow-clip w-80 text-base-content bg-base-100">
+<div class="pt-3 menu overflow-clip w-64 text-base-content bg-base-100">
 	<div on:click={() => (show = !show)}>
 		{title}
 		<span class="float-right">
