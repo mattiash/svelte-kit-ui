@@ -3,6 +3,7 @@
 	import Status from '$lib/status.svelte';
 	import MainMenu from '$lib/Menu/MainMenu.svelte';
 	import { mainMenuOpen } from '$lib/stores';
+	import { loop_guard } from 'svelte/internal';
 
 	let menuOpen = false;
 
@@ -37,9 +38,9 @@
 	</div>
 </div>
 
-<div class="h-screen drawer drawer-mobile w-full">
+<div class="drawer drawer-mobile w-full">
 	<input id="my-drawer-2" type="checkbox" class="drawer-toggle" bind:checked={menuOpen} />
-	<div class="drawer-content p-2 min-h-screen">
+	<div class="drawer-content p-2 min-h-screen lg:min-h-0">
 		<!-- Page content here -->
 		<slot />
 	</div>
