@@ -6,11 +6,13 @@
 
 <svelte:window bind:innerHeight />
 <div style="min-height: {innerHeight - 52}px;" class="border-r border-b-200 pt-2 px-3">
-	<SubMenu title="Admin">
-		<MenuItem title="Users" path="/user" />
-	</SubMenu>
-	<SubMenu title="Misc">
-		<MenuItem title="Home" path="/" />
-		<MenuItem title="Channel" path="/channel" />
-	</SubMenu>
+	<div class="bg-base-100 px-2 pb-2 lg:px-0 lg:pb-0 w-64 rounded">
+		<SubMenu title="Admin">
+			<MenuItem title="Users" path="/user" />
+		</SubMenu>
+		<SubMenu title="Misc">
+			<MenuItem title="Home" path="/" />
+			<MenuItem title="Channel" path="/channel" />
+		</SubMenu>
+	</div>
 </div>
