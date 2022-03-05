@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import { getUsers, type User } from '$lib/api/user';
-	import { TableSort } from 'svelte-tablesort';
+	import TableSort from 'svelte-tablesort/TableSort.svelte';
 	let users = new Array<User>();
 	getUsers().then((v) => (users = v));
 </script>
