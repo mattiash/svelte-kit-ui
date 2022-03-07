@@ -1,5 +1,5 @@
 {
-  "name": "daisy2",
+  "name": "svelte-kit-ui",
   "version": "0.0.1",
   "scripts": {
     "dev": "svelte-kit dev",
