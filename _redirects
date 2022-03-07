@@ -1,2 +1,2 @@
 # Redirect to /index.html on 404 for Netlify
-/ /index.html 404
+/* /index.html 404
