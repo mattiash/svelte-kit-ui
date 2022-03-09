@@ -1,14 +1,13 @@
 <script lang="ts">
+	import type { User } from '$lib/api/user';
 	import { goto } from '$app/navigation';
-	import { getUsers, type User } from '$lib/api/user';
 	import TableSort from 'svelte-tablesort/TableSort.svelte';
-	let users = new Array<User>();
-	getUsers().then((v) => (users = v));
+	export let items: User[];
 </script>
 
 <h1>Users</h1>
 <div class="overflow-x-auto">
-	<TableSort items={users} class="table w-full">
+	<TableSort {items} class="table w-full">
 		<tr slot="thead">
 			<th data-sort="id">Id</th>
 			<th data-sort="name">Name</th>
