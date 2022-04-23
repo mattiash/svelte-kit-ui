@@ -13,9 +13,10 @@
 
 	const openParent = getContext('open') as () => void;
 
-	// Does pathname start with the path for this menuitem?
-	function matchesPath(pathname: string) {
-		return pathname.match(new RegExp(`${path}(/|$)`));
+	// Does currentPath start with the path for this menuitem?
+	function matchesPath(currentPath: string) {
+		console.log(path, currentPath);
+		return currentPath.match(new RegExp(`^${path}(/|$)`));
 	}
 
 	afterNavigate((d) => {
