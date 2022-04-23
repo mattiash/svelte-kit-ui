@@ -29,6 +29,10 @@ export async function getUser(id: string) {
 	return (await resp.json()) as User;
 }
 
+export async function putUser(data: any) {
+	console.log('putUser', data);
+}
+
 function sleep(ms: number) {
 	return new Promise((resolve) => {
 		setTimeout(resolve, ms);

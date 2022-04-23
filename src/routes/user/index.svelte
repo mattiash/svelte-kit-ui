@@ -1,23 +1,20 @@
 <script lang="ts">
-	import type { User } from '$lib/api/user';
 	import { goto, invalidate } from '$app/navigation';
-	import TableSort from 'svelte-tablesort/TableSort.svelte';
+	import { getUsers, getUsersUrl, type User } from '$lib/api/user';
 	import { onMount } from 'svelte';
-	export let items: User[];
+	import TableSort from 'svelte-tablesort/TableSort.svelte';
+	let users = new Array<User>();
+	getUsers().then((v) => (users = v));
 
 	onMount(() => {
-		const interval = setInterval(() => {
-			console.log('invalidate');
-			invalidate('/user');
-		}, 1000);
-
+		const interval = setInterval(() => invalidate(getUsersUrl));
 		return () => clearInterval(interval);
 	});
 </script>
 
 <h1>Users</h1>
 <div class="overflow-x-auto">
-	<TableSort {items} class="table w-full">
+	<TableSort items={users} class="table w-full">
 		<tr slot="thead">
 			<th data-sort="id">Id</th>
 			<th data-sort="name">Name</th>

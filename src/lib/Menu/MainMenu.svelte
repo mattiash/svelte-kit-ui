@@ -15,7 +15,7 @@
 	<div class="bg-base-100 px-2 pb-2 lg:px-0 lg:pb-0 w-64 rounded min-h-full">
 		<SubMenu title="Admin">
 			<MenuItem title="Users" path="/user" />
-			<MenuItem title="Users 2" path="/user2" />
+			<MenuItem title="Users (endpoint)" path="/user_endpoint" />
 		</SubMenu>
 		<SubMenu title="Misc">
 			<MenuItem title="Home" path="/" />
