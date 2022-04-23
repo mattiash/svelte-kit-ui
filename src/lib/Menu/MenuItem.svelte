@@ -15,7 +15,7 @@
 
 	// Does pathname start with the path for this menuitem?
 	function matchesPath(pathname: string) {
-		return path === '/' ? pathname === path : pathname.startsWith(path);
+		return pathname.match(new RegExp(`${path}(/|$)`));
 	}
 
 	afterNavigate((d) => {

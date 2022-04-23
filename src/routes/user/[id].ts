@@ -8,3 +8,8 @@ export async function get({ params }) {
 		}
 	};
 }
+
+export async function post({ params }) {
+	console.log(params);
+	throw new Error('bad');
+}

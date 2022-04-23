@@ -1,6 +1,7 @@
 export type User = {
 	id: string;
 	name: string;
+	lastUpdated: Date;
 };
 
 const JSONPLACEHOLDER = 'https://jsonplaceholder.typicode.com';
@@ -14,10 +15,12 @@ async function myFetch(input: RequestInfo, init?: RequestInit) {
 	}
 }
 
+export const getUsersUrl = JSONPLACEHOLDER + '/users';
 export async function getUsers() {
-	const url = JSONPLACEHOLDER + '/users';
-	const resp = await myFetch(url);
-	return (await resp.json()) as User[];
+	const resp = await myFetch(getUsersUrl);
+	const data = (await resp.json()) as User[];
+	data.forEach((user) => (user.lastUpdated = new Date()));
+	return data;
 }
 
 export async function getUser(id: string) {
