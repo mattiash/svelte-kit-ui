@@ -11,9 +11,12 @@ const config = {
 		adapter: adapter({
 			fallback: 'index.html'
 		}),
-
+		trailingSlash: 'always',
 		prerender: {
-			enabled: false
+			// Set to false again when adapter-static releases a version
+			// greater than 1.0.0-next.29
+			// https://github.com/sveltejs/kit/issues/4441
+			enabled: true
 		}
 	}
 };
